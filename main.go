@@ -92,6 +92,11 @@ func main() {
 	}
 
 	for key, question := range questionMap {
-		fmt.Printf("%v %v\n", key, question)
+		key = strings.Replace(key, "\r", "", -1)
+		if question != 0 {
+			fmt.Printf("%v %v\n", key, question)
+		} else {
+			fmt.Printf("%v\n", key)
+		}
 	}
 }
