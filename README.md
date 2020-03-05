@@ -14,3 +14,5 @@ found here: http://en.wikipedia.org/wiki/Clean_Code)
 diagrams if you think necessary), nontrivial assumptions as well as the clear instructions on
 compiling and invoking the program with program environment details. Proper server setup
 instructions are also essential if you develop a web application for presenting the results.
+
+![alt text](https://github.com/johanesarnold/prospace-test/blob/master/diagram%20solution.png)
