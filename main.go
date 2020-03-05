@@ -18,6 +18,8 @@ func main() {
 	splittedInput := strings.Split(content, "\n")
 
 	for _, input := range splittedInput {
+		input = strings.TrimSpace(input)
+
 		if strings.Contains(input, much) {
 			result := helpers.CalculateHowMuch(input, romanMap, valueMap)
 			fmt.Println(result)

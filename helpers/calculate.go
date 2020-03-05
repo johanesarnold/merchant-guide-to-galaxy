@@ -2,7 +2,6 @@ package helpers
 
 import (
 	"fmt"
-	"regexp"
 	"strconv"
 	"strings"
 )
@@ -10,7 +9,6 @@ import (
 const is = " is "
 const space = " "
 const wrong = "I have no idea what you are talking about"
-const regexFormula = "[^a-zA-Z0-9]+"
 const credits = "Credits"
 
 func CalculateHowMuch(input string, romanMap map[string]string, valueMap map[string]float64) string {
@@ -111,12 +109,8 @@ func StoreValueMap(input string, romanMap map[string]string) (string, float64) {
 }
 
 func StoreRomanMap(input string) (string, string) {
-
 	splitted := strings.Split(input, " is ")
-	reg, err := regexp.Compile(regexFormula)
-	FailOnError(err, "Failed to compile regex")
-	roman := splitted[1]
-	roman = reg.ReplaceAllString(roman, "")
+	roman := strings.TrimSpace(splitted[1])
 
 	key := splitted[0]
 	value := roman

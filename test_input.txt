@@ -1,6 +1,6 @@
-glob is I
-prok is V
-pish is X
+         glob is I            
+prok is V         
+pish is X          
 tegj is L 
 glob glob Silver is 34 Credits
 glob prok Gold is 57800 Credits
