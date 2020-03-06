@@ -66,7 +66,7 @@ func CalculateHowMany(input string, romanMap map[string]string, valueMap map[str
 						finalNumeral := float64(numeral) * valueMap[value]
 
 						tempQuestion += value
-						tempQuestion += fmt.Sprintf(" is %d %s", int(finalNumeral), credits)
+						tempQuestion += fmt.Sprintf(" is %f %s", finalNumeral, credits)
 					} else {
 						tempQuestion += " "
 					}
