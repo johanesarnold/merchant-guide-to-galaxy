@@ -5,16 +5,17 @@ import (
 	"strings"
 )
 
+var symbolMap = map[string]int{
+	"I": 1,
+	"V": 5,
+	"X": 10,
+	"L": 50,
+	"C": 100,
+	"D": 500,
+	"M": 1000,
+}
+
 func NumeralConvert(roman string) (int, error) {
-	symbolMap := map[string]int{
-		"I": 1,
-		"V": 5,
-		"X": 10,
-		"L": 50,
-		"C": 100,
-		"D": 500,
-		"M": 1000,
-	}
 
 	var numeral int
 
@@ -43,4 +44,8 @@ func NumeralConvert(roman string) (int, error) {
 		}
 	}
 	return numeral, nil
+}
+
+func GetSymbolMap() map[string]int {
+	return symbolMap
 }

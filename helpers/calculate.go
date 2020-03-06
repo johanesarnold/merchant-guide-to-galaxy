@@ -80,7 +80,11 @@ func CalculateHowMany(input string, romanMap map[string]string, valueMap map[str
 	return result
 }
 
-// map[string]int
+func ReturnWrong() string {
+	result := wrong
+	return result
+}
+
 func StoreValueMap(input string, romanMap map[string]string) (string, float64) {
 	splitted := strings.Split(input, is)
 	splittedRoman := strings.Split(splitted[0], space)
