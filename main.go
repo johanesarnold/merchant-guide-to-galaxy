@@ -17,8 +17,6 @@ func main() {
 
 	content := helpers.Read("test_input.txt")
 	splittedInput := strings.Split(content, "\n")
-	symbolMap := helpers.GetSymbolMap()
-	var flag int
 
 	for _, input := range splittedInput {
 		input = strings.TrimSpace(input)
@@ -35,22 +33,17 @@ func main() {
 				fmt.Println(result)
 			}
 		} else {
-			flag = -1
-			for key, _ := range symbolMap {
-				if strings.Contains(input, key) {
-					flag = 1
-				}
-			}
-
 			if strings.Contains(input, credits) {
 				key, value := helpers.StoreValueMap(input, romanMap)
 				valueMap[key] = value
-			} else if flag == 1 {
-				key, value := helpers.StoreRomanMap(input)
-				romanMap[key] = value
 			} else {
-				result := helpers.ReturnWrong()
-				fmt.Println(result)
+				key, value := helpers.StoreRomanMap(input)
+				if key == "" && value == "" {
+					result := helpers.ReturnWrong()
+					fmt.Println(result)
+				} else {
+					romanMap[key] = value
+				}
 			}
 		}
 	}

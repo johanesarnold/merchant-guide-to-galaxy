@@ -113,11 +113,13 @@ func StoreValueMap(input string, romanMap map[string]string) (string, float64) {
 }
 
 func StoreRomanMap(input string) (string, string) {
+	var key string = ""
+	var value string = ""
 	splitted := strings.Split(input, " is ")
-	roman := strings.TrimSpace(splitted[1])
-
-	key := splitted[0]
-	value := roman
-
+	if len(splitted) > 1 {
+		roman := strings.TrimSpace(splitted[1])
+		key = splitted[0]
+		value = roman
+	}
 	return key, value
 }
