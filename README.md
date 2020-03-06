@@ -14,7 +14,7 @@ C 100
 D 500
 M 1,000
 
-![alt text](https://github.com/johanesarnold/prospace-test/blob/master/activity-diagram.png)
+![alt text](https://github.com/johanesarnold/prospace-test/blob/master/diagram-v2.png)
 
 ## Input
 ```
