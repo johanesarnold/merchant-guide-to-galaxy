@@ -5,6 +5,8 @@ import (
 	"strings"
 )
 
+const errMessageInvalid = "Invalid roman character"
+
 var symbolMap = map[string]int{
 	"I": 1,
 	"V": 5,
@@ -37,7 +39,7 @@ func NumeralConvert(roman string) (int, error) {
 		value := symbolMap[romanString]
 
 		if value == 0 {
-			return -1, errors.New("Invalid roman character")
+			return -1, errors.New(errMessageInvalid)
 		}
 
 		next := i + 1
@@ -51,7 +53,7 @@ func NumeralConvert(roman string) (int, error) {
 			repeatedMap["D"] > 1 ||
 			repeatedMap["L"] > 1 ||
 			repeatedMap["V"] > 1 {
-			return -1, errors.New("Invalid roman character")
+			return -1, errors.New(errMessageInvalid)
 		}
 
 		if next < len(roman) {
@@ -60,14 +62,14 @@ func NumeralConvert(roman string) (int, error) {
 
 			if value < valueNext {
 				if romanString == "V" || romanString == "L" || romanString == "D" {
-					return -1, errors.New("Invalid roman character")
+					return -1, errors.New(errMessageInvalid)
 				}
 				if lastRomanValue < valueNext-value && i != 0 {
-					return -1, errors.New("Invalid roman character")
+					return -1, errors.New(errMessageInvalid)
 				}
 
 				if romanString != substractMap[romanNextString] {
-					return -1, errors.New("Invalid roman character")
+					return -1, errors.New(errMessageInvalid)
 				}
 
 				numeral += valueNext - value
