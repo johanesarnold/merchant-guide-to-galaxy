@@ -81,7 +81,11 @@ func TestNumeralConvert(t *testing.T) {
 		expected := romanArr[roman]
 
 		if got != expected {
-			t.Errorf("String: %v, Expected %d, Got %d (%s)", roman, expected, got, err)
+			errMessage := ""
+			if err != nil {
+				errMessage = err.Error()
+			}
+			t.Errorf("String: %v, Expected %d, Got %d %s", roman, expected, got, errMessage)
 		}
 	}
 }

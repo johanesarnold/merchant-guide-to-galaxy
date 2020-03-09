@@ -44,6 +44,16 @@ func NumeralConvert(roman string) (int, error) {
 		valueNext := 0
 		repeatedMap[string(roman[i])] += 1
 
+		if repeatedMap["I"] > 3 ||
+			repeatedMap["X"] > 3 ||
+			repeatedMap["C"] > 3 ||
+			repeatedMap["M"] > 3 ||
+			repeatedMap["D"] > 1 ||
+			repeatedMap["L"] > 1 ||
+			repeatedMap["V"] > 1 {
+			return -1, errors.New("Invalid roman character")
+		}
+
 		if next < len(roman) {
 			romanNextString := string(roman[next])
 			valueNext = symbolMap[romanNextString]
@@ -65,16 +75,6 @@ func NumeralConvert(roman string) (int, error) {
 				i++
 				continue
 			}
-		}
-
-		if repeatedMap["I"] > 3 ||
-			repeatedMap["X"] > 3 ||
-			repeatedMap["C"] > 3 ||
-			repeatedMap["M"] > 3 ||
-			repeatedMap["D"] > 1 ||
-			repeatedMap["L"] > 1 ||
-			repeatedMap["V"] > 1 {
-			return -1, errors.New("Invalid roman character")
 		}
 
 		numeral += value
