@@ -1,6 +1,4 @@
-## prospace-test
-
-# GALAXY MERCHANT TRADING GUIDE
+# Merchants Guide to Galaxy
 
 Problem Description
 
